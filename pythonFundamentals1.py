@@ -32,3 +32,14 @@ results = {
     "1" : countOf1,
     "error" : countOfError
 }
+
+
+
+
+#Learning def function of python.
+import random
+def generateBits(lenght):
+    """ This program genrates bits of given length."""
+    bitsList = [random.randint(0, 1) for i in range(lenght)]
+    return bitsList
+print(generateBits(8))
