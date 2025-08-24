@@ -38,13 +38,13 @@
 
 ##  Overview
 
-<code>❯ REPLACE-ME</code>
+<code>❯ This repository contains the Python-based microservice for the Q-Crypt project. Its primary function is to simulate the BB84 Quantum Key Distribution (QKD) protocol and generate a secure, one-time quantum key for the main chat application. It also features a built-in intrusion detection mechanism to check for eavesdroppers</code>
 
 ---
 
 ##  Features
 
-<code>❯ REPLACE-ME</code>
+<code>❯ Quantum Key Generation: Simulates the BB84 protocol to create a shared, secret key. Eavesdropper Detection: Calculates a quantum bit error rate (QBER) to detect potential security breaches during key exchange. RESTful API: Exposes a simple HTTP endpoint that the main application can call to request a key. Lightweight and Modular: Designed as a microservice, making it easy to integrate with any backend system.</code>
 
 ---
 
@@ -211,6 +211,6 @@ This project is protected under the [MIT License](https://choosealicense.com/lic
 
 ##  Acknowledgments
 
-- List any resources, contributors, inspiration, etc. here.
+- All the things in this repository are learned and created by Dev Hitesh Desai. Learned from Gemini AI. All the resources used here opensourced. Thank You for hearing me out.
 
 ---
