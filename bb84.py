@@ -58,6 +58,30 @@ def simulate_bb84():
         for k in all_qubits:
             if(k == -1):
                 print("Error! restarting the process")
-
     print(f"\nAlice has prepared {len(all_qubits)} qubits to send to Bob.")
-simulate_bb84()
+
+
+    # --- Step 3: Bob chooses his bases and measures the qubits ---
+    # Bob generates his own random string of bases
+    bob_bases = [random.randint(0, 1) for i in range(KEY_LENGTH)]
+    print(f"Bob's chosen bases:   {bob_bases} (0=Z, 1=X)")
+
+    bob_bits = []
+    for i in range(KEY_LENGTH):
+        # Get the specific circuit prepared by Alice
+        qc = all_qubits[i]
+
+        # If Bob's basis is X (1), he applies an H-gate BEFORE measuring
+        if bob_bases[i] == 1:
+            qc.h(0)
+        
+        # Bob always measures in the Z-basis
+        qc.measure(0, 0)
+
+        # Run the simulation for this single circuit
+        simulator = Aer.get_backend('aer_simulator')
+        result = simulator.run(qc, shots=1, memory=True).result()
+        measured_bit = int(result.get_memory()[0])
+        bob_bits.append(measured_bit)
+
+    print(f"Bob's measured bits:  {bob_bits}")
