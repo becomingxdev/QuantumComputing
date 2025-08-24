@@ -43,3 +43,19 @@ def generateBits(lenght):
     bitsList = [random.randint(0, 1) for i in range(lenght)]
     return bitsList
 print(generateBits(8))
+
+
+
+
+#OOP Concept in python
+class Communicator:
+    def __init__(self, name):
+        self.name = name
+        self.bits = []
+
+    def genrateBits(self, length):
+        ListOfBits = [random.randint(0, 1) for i in range(length)]
+        self.bits = ListOfBits
+alice = Communicator("Alice")
+alice.genrateBits(8)
+print(f"{alice.name}'s bits are: {alice.bits}")
