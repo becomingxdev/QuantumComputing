@@ -84,4 +84,48 @@ def simulate_bb84():
         measured_bit = int(result.get_memory()[0])
         bob_bits.append(measured_bit)
 
+    # ... (the code for Bob's measurement) ...
     print(f"Bob's measured bits:  {bob_bits}")
+
+
+    # --- Step 4: Sifting Phase ---
+    # Alice and Bob publicly compare their bases and keep only the bits where they match.
+    
+    sifted_key_alice = []
+    sifted_key_bob = []
+    
+    for i in range(KEY_LENGTH):
+        if alice_bases[i] == bob_bases[i]:
+            sifted_key_alice.append(alice_bits[i])
+            sifted_key_bob.append(bob_bits[i])
+
+    print("\n--- Sifting Phase Complete ---")
+    print(f"Alice's sifted key: {sifted_key_alice}")
+    print(f"Bob's sifted key:   {sifted_key_bob}")
+
+
+    # --- Step 5: Error Checking Phase ---
+    # Alice and Bob compare a sample of their sifted keys to check for a spy.
+    # In our simulation, we can just compare the whole key.
+    
+    errors = 0
+    for i in range(len(sifted_key_alice)):
+        if sifted_key_alice[i] != sifted_key_bob[i]:
+            errors += 1
+            
+    qber = (errors / len(sifted_key_alice)) * 100 if sifted_key_alice else 0
+
+    print("\n--- Final Results ---")
+    if errors > 0:
+        print(f"Errors found: {errors} ({qber:.2f}% QBER)")
+        print("A spy may be present! Key is insecure. ABORT.")
+        return None
+    else:
+        print("No errors found! The key is secure.")
+        return sifted_key_alice
+
+
+# This special if statement ensures the code only runs when you execute this file directly.
+# It's a very important Python best practice!
+if __name__ == "__main__":
+    simulate_bb84()
