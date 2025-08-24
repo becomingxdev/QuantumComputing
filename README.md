@@ -1,4 +1,4 @@
-#Q-Crypt Python Key Generator
+#Q-Crypt Python Key Genrator
 
 <p>This repository contains the Python-based microservice for the Q-Crypt project. Its primary function is to simulate the BB84 Quantum Key Distribution (QKD) protocol and generate a secure, one-time quantum key for the main chat application. It also features a built-in intrusion detection mechanism to check for eavesdroppers.</p>
 
