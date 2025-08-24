@@ -2,23 +2,17 @@
 
 <p>This repository contains the Python-based microservice for the Q-Crypt project. Its primary function is to simulate the BB84 Quantum Key Distribution (QKD) protocol and generate a secure, one-time quantum key for the main chat application. It also features a built-in intrusion detection mechanism to check for eavesdroppers.</p>
 
-📋 Table of Contents
-Features
+📋 Table of Contents:
+1)Features
+2)Technical Stack
+3)Installation and Setup
+4)API Endpoint Usage
+5)Underlying Principles (BB84 Protocol)
+6)Contribution
+7)License
 
-Technical Stack
-
-Installation and Setup
-
-API Endpoint Usage
-
-Underlying Principles (BB84 Protocol)
-
-Contribution
-
-License
-
-✨ Features
-Quantum Key Generation: Simulates the BB84 protocol to create a shared, secret key.
+✨ Features:
+<p>Quantum Key Generation: Simulates the BB84 protocol to create a shared, secret key.
 
 Eavesdropper Detection: Calculates a quantum bit error rate (QBER) to detect potential security breaches during key exchange.
 
@@ -38,7 +32,7 @@ Follow these steps to get the service running locally.
 
 Clone the Repository
 
-git clone https://github.com/your-username/q-crypt-python-backend.git
+git clone https://github.com/becomingxdev/QuantumComputing.git
 cd q-crypt-python-backend
 
 Create a Virtual Environment
