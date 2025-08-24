@@ -122,6 +122,7 @@ def simulate_bb84():
         return None
     else:
         print("No errors found! The key is secure.")
+        print(sifted_key_alice)
         return sifted_key_alice
 
 
